@@ -28,12 +28,10 @@ This will launch the Cypress Test Runner, where you can write and run tests for 
 8. Run the following command install the plugin and correct the exception showing in cypress.config.ts file:
     `npm install --save-dev @bahmutov/cypress-esbuild-preprocessor`
 9. In order for Cypress to be able to "see" .ts files run the following command:
-    `npm install --save-dev @bahmutov/cypress-esbuild-preprocessor`
+    `npm install ts-loader --save-dev`
 10. Enable the Cucumber (Gherkin) Full Support vs code extension
-11. Go to File-->Preferences-->Settings select the Extensions dropdown, select the cucumber extension and open the settings.json
-12. Add the following line of code, to settings.json file, in order to set the location of the step definition files `"cucumberautocomplete.steps": ["cypress/support/step_definitions/*.js"]`
-13. Add the following lines in the end of the package.json file
-    `"cypress-cucumber-preprocessor": {"stepDefinitions": "cypress/support/step_definitions/**/*.js"}`
+11. Go to File-->Preferences-->Settings select the Extensions dropdown, select the cucumber extension, open the settings.json
+    and add the following line of code, to settings.json file, in order to set the location of the step definition files `"cucumberautocomplete.steps": ["cypress/support/step_definitions/*.js"]`
 
 Conclusion  
 You have successfully installed Cypress 12.6.0 on your system! Happy testing!  
