@@ -19,6 +19,14 @@ This command installs Cypress as a dev dependency in your project and saves it t
 
 5. Once the installation is complete, open Cypress by running:  
     `npx cypress open`  
+6. Next, install the Cucumber preprocessor:
+    `npm install @badeball/cypress-cucumber-preprocessor`
+7. Change the cypress.config.js file as recommended in the following installation guide:
+    https://github.com/badeball/cypress-cucumber-preprocessor/blob/b6295672f0433f454b14c2ea3f7f859a97f0ac44/docs/quick-start.md#example-setup
+8. Run the following command install the plugin and correct the exception showing in cypress.config.ts file:
+    `npm install --save-dev @bahmutov/cypress-esbuild-preprocessor`
+9. In order for Cypress to be able to "see" .ts files run the following command:
+    `npm install --save-dev @bahmutov/cypress-esbuild-preprocessor`
 
  This will launch the Cypress Test Runner, where you can write and run tests for your application.  
 
