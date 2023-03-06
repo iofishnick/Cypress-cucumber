@@ -1,5 +1,6 @@
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
+// Scenario: Valid contact us form submission
 When("I type a first name", () => {
   cy.get('[name="first_name"]').type("io");
 });
@@ -24,5 +25,33 @@ Then(
   "I should be presented with a successful contact us submission message",
   () => {
     cy.get("#contact_reply").should("contain", "Thank You for your Message!");
+  }
+);
+
+// Scenario: Invalid contact us form submission
+Then(
+  "I should be presented with a unsuccessful contact us submission message",
+  () => {
+    cy.get("body").contains("Error: Invalid email address");
+  }
+);
+
+// Scenario: Valid contact us form submission - Using specific data
+When("I type a specific first name {string}", (firstName) => {
+  cy.get('[name="first_name"]').type(firstName);
+});
+
+When("I type a specific last name {string}", (lastName) => {
+  cy.get('[name="last_name"]').type(lastName);
+});
+
+When("I type a specific email address {string}", (email) => {
+  cy.get('[name="email"]').type(email);
+});
+
+When(
+  "I type a specific word {string} and number {int} within the comment input field",
+  (comment, number) => {
+    cy.get('textarea[name="message"]').type(comment + ' ' + number);
   }
 );
