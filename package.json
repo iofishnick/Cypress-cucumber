@@ -16,5 +16,14 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/support/step_definitions/**/*.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iofishnick/Cypress-cucumber.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/iofishnick/Cypress-cucumber/issues"
+  },
+  "homepage": "https://github.com/iofishnick/Cypress-cucumber#readme"
 }
