@@ -43,5 +43,5 @@ Feature: WebdriverUniversity - Contact us page
         Examples:
             | firstName | lastName | emailAddress      | comment      | message                      |
             | John      | Jones    | testJohn@test.com | Hello John!  | Thank You for your Message!  |
-            | Mia       | Carter   | testMia@test.com  | This is Mia! | Thank You for your Message!22  |
+            | Mia       | Carter   | testMia@test.com  | This is Mia! | Thank You for your Message!  |
             | Grace     | Hudson   | testGrace         | How are you? | Error: Invalid email address |
