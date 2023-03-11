@@ -33,6 +33,7 @@ Feature: WebdriverUniversity - Contact us page
     # more than one (let's say adding two last names). So in our feature file we
     # need '' for the {string} expression and for the single word just <>
 
+    @smoke
     Scenario Outline: Validate contact us page
         And I type a first name <firstName> and a last name '<lastName>'
         And I type a '<emailAddress>' and a comment '<comment>'
@@ -42,5 +43,5 @@ Feature: WebdriverUniversity - Contact us page
         Examples:
             | firstName | lastName | emailAddress      | comment      | message                      |
             | John      | Jones    | testJohn@test.com | Hello John!  | Thank You for your Message!  |
-            | Mia       | Carter   | testMia@test.com  | This is Mia! | Thank You for your Message!  |
+            | Mia       | Carter   | testMia@test.com  | This is Mia! | Thank You for your Message!22  |
             | Grace     | Hudson   | testGrace         | How are you? | Error: Invalid email address |

@@ -4,19 +4,41 @@
   "description": "Practice Cypress-cucumber project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-headless-chrome": "cypress run --browser chrome --spec 'cypress/e2e/*.feature'",
+    "contact-us-tag-headed": "cypress run -e TAGS='@contact-us' --headed",
+    "regression-tag-headed": "cypress run -e TAGS='@regression' -- headed; node cucumber-html-report.js",
+    "regression-tag-headless": "cypress run -e TAGS='@regression' -- headed; node cucumber-html-report.js",
+    "smoke-tag-headed": "cypress run -e TAGS='@smoke' --headed",
+    "regression-no-smoke-headed": "cypress run -e TAGS='@regression and not @smoke' --headed"
   },
-  "author": "",
+  "author": "ioFish",
   "license": "ISC",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^12.6.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.2.0",
     "ts-loader": "^9.4.2"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-reports.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-reports.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
   },
   "repository": {
     "type": "git",

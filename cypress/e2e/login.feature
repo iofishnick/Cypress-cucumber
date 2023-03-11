@@ -1,5 +1,5 @@
 @login @regression
-Feature: WebdriverUniversity - Lonin page
+Feature: WebdriverUniversity - Login page
 
         Scenario Outline: Test valid and invalid credentials
                 Given I navigate to the WebdriverUniversity homepage
