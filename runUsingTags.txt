@@ -1,0 +1,7 @@
+1. npx cypress run -e TAGS='@login' --headed                                        | runs the feature files tagged with @login
+2. npx cypress run -e TAGS='@login or @contact-us' --headed                         | runs the @login and the @contact-us files
+3. npx cypress run -e TAGS='@smoke' --headed                                        | runs single scenarios tagged as @smoke
+4. npx cypress run -e TAGS='@regression' --headed                                   | runs all feature files tagged for @regression
+5. npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed        | runs @login and @contact-us tagged features but excludes the scenarios marked as @smoke
+6. npx cypress run  cypress/e2e/*.feature --headed                                  | runs all feature files (lose the --headed and it will run just in console)
+                                                                                    | we can run a single file by adding the path to that file name instead of *
